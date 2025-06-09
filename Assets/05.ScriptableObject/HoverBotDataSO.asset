@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxNum: 10
   SpawnTime: 2
-  Prefab: {fileID: 2015434656898269652, guid: 25a1b0efadb966e44889fce712c8ff8d, type: 3}
+  Prefab: {fileID: 2015434656898269652, guid: e5eec013c00a6b543a091ab1ada19512, type: 3}
