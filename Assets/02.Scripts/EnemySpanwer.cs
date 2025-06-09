@@ -1,16 +1,31 @@
+﻿using Unity.FPS.AI;
+using Unity.FPS.UI;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemySpanwer : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private float _timer = 0.0f;
+
+    public EnemyDataSO EnemyDataSO;
+
+    [SerializeField]
+    private int _maxEnemy = 10;
+
+    private EnemyManager _enemyManager;
+    private void Awake()
     {
-        
+        _enemyManager = FindObjectOfType<EnemyManager>();
+    }
+    public void SpawnEnemy()
+    {
+        Instantiate(EnemyDataSO.Prefab, transform.position, Quaternion.identity);
+        _timer = Time.time;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (Time.time - _timer > EnemyDataSO.SpawnTime && _enemyManager.GetEnemyN() < _maxEnemy)
+            SpawnEnemy();
     }
 }

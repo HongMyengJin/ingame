@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Unity.FPS.Game;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Unity.FPS.AI
@@ -9,7 +10,6 @@ namespace Unity.FPS.AI
         public List<EnemyController> Enemies { get; private set; }
         public int NumberOfEnemiesTotal { get; private set; }
         public int NumberOfEnemiesRemaining => Enemies.Count;
-
         void Awake()
         {
             Enemies = new List<EnemyController>();
@@ -33,6 +33,12 @@ namespace Unity.FPS.AI
 
             // removes the enemy from the list, so that we can keep track of how many are left on the map
             Enemies.Remove(enemyKilled);
+        }
+
+        public int GetEnemyN()
+        {
+            Debug.Log($"현재 적 카운트: {Enemies.Count}");
+            return Enemies.Count;
         }
     }
 }
