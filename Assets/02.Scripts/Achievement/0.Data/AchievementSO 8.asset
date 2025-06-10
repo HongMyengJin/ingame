@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8620627e91668240bc5f21f6111cbf5, type: 3}
+  m_Name: AchievementSO 8
+  m_EditorClassIdentifier: 
+  _id: TEST
+  _name: TTT
+  _description: TESTSTSSTS
+  _condition: 4
+  _goalValue: 777
+  _rewardCurrencyType: 1
+  _rewardAmount: 10

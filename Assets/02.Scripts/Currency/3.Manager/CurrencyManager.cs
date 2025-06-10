@@ -82,6 +82,8 @@ public class CurrencyManager : MonoBehaviour
 
         _repository.Save(ToDtoList());
 
+        AchievementManager.Instance.Increase(EAchievementCondition.GoldCollect, value);
+
         OnDataChanged?.Invoke();
     }
 

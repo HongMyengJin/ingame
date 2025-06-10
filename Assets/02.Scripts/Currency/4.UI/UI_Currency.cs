@@ -45,7 +45,6 @@ public class UI_Currency : MonoBehaviour
 
     public void BuyHealth()
     {
-
         if (CurrencyManager.Instance.TryBuy(ECurrencyType.Gold, 300))
         {
             var player = GameObject.FindFirstObjectByType<PlayerCharacterController>();
