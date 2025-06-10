@@ -1110,6 +1110,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cfdacd1e10bde194793197bd81d05ae6, type: 2}
   - {fileID: 11400000, guid: eeb46cfb06ec7204d81dbd4954127fb6, type: 2}
   - {fileID: 11400000, guid: 655936800e5328941b5e1f1b908a900c, type: 2}
+  _achievementLoader: {fileID: 1033880331}
+  ui_AchievementContent: {fileID: 1664963373}
+  ui_AchievementPrefab: {fileID: 3701852360231611740, guid: 03829e1af41b17a4f82de34069204f68,
+    type: 3}
 --- !u!114 &927331410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1340,6 +1344,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1027148984}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1033880330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1033880332}
+  - component: {fileID: 1033880331}
+  m_Layer: 0
+  m_Name: CsvParser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1033880331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033880330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7cfa5b51c0bafa40a999d06abbf9d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  csvAsset: {fileID: 4900000, guid: fff0277bbdd8f1a458cf28c5545e0f9d, type: 3}
+--- !u!4 &1033880332
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033880330}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1053129284
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7501,3 +7550,4 @@ SceneRoots:
   - {fileID: 927331407}
   - {fileID: 1594221264}
   - {fileID: 1053129284}
+  - {fileID: 1033880332}

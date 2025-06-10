@@ -33,29 +33,29 @@ public class Achievement
     // 생성자
 
     
-    public Achievement(AchievementSO metaData, AchievementSaveData saveData)
+    public Achievement(AchievementDTO achievementDTO, AchievementSaveData saveData)
     {
-        if (string.IsNullOrEmpty(metaData.ID))
+        if (string.IsNullOrEmpty(achievementDTO.ID))
         {
             throw new ArgumentException("업적 ID은 비어있을 수 없습니다.");
         }
 
-        if (string.IsNullOrEmpty(metaData.Name))
+        if (string.IsNullOrEmpty(achievementDTO.Name))
         {
             throw new ArgumentException("업적 이름은 비어있을 수 없습니다.");
         }
         
-        if (string.IsNullOrEmpty(metaData.Description))
+        if (string.IsNullOrEmpty(achievementDTO.Description))
         {
             throw new ArgumentException("업적 설명은 비어있을 수 없습니다.");
         }
         
-        if (metaData.GoalValue <= 0)
+        if (achievementDTO.GoalValue < 0)
         {
             throw new ArgumentException("업적 목표 값은 0보다 커야합니다.");
         }
 
-        if (metaData.RewardAmount <= 0)
+        if (achievementDTO.RewardAmount < 0)
         {
             throw new ArgumentException("업적 보상 값은 0보다 커야합니다.");
         }
@@ -65,13 +65,13 @@ public class Achievement
             throw new ArgumentException("업적 진행 값은 0보다 커야합니다.");
         }
 
-        ID = metaData.ID;
-        Name = metaData.Name;
-        Description = metaData.Description;
-        GoalValue = metaData.GoalValue;
-        Condition = metaData.Condition;
-        RewardCurrencyType = metaData.RewardCurrencyType;
-        RewardAmount = metaData.RewardAmount;
+        ID = achievementDTO.ID;
+        Name = achievementDTO.Name;
+        Description = achievementDTO.Description;
+        GoalValue = achievementDTO.GoalValue;
+        Condition = achievementDTO.Condition;
+        RewardCurrencyType = achievementDTO.RewardCurrencyType;
+        RewardAmount = achievementDTO.RewardAmount;
 
         _currentValue = saveData.CurrentValue;
         _rewardClaimed = saveData.RewardClaimed;

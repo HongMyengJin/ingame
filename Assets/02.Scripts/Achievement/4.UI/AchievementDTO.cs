@@ -2,16 +2,26 @@
 
 public class AchievementDTO
 {
-    public readonly string ID;
-    public readonly string Name;
-    public readonly string Description;
-    public readonly EAchievementCondition Condition;
-    public readonly int CurrentValue;
-    public readonly int GoalValue;
-    public readonly ECurrencyType RewardCurrencyType;
-    public readonly int RewardAmount;
+    [CsvColumn("ID")]
+    public string ID;
+    [CsvColumn("Name")]
+    public string Name;
+    [CsvColumn("Description")]
+    public string Description;
 
-    public readonly bool RewardClaimed;
+    // EAchievementCondition
+    [CsvColumn("EAchievementCondition")]
+    public EAchievementCondition Condition;
+
+    [CsvColumn("GoalValue")]
+    public int GoalValue;
+    [CsvColumn("RewardType")]
+    public ECurrencyType RewardCurrencyType;
+    [CsvColumn("RewardAmount")]
+    public int RewardAmount;
+
+    public bool RewardClaimed;
+    public int CurrentValue;
 
     public AchievementDTO(string id,
                           string name,
@@ -58,6 +68,11 @@ public class AchievementDTO
         ID = id;
         CurrentValue = currentValue;
         RewardClaimed = rewardClaimed;
+    }
+
+    public AchievementDTO()
+    {
+
     }
     public bool CanClaimReward()
     {

@@ -18,7 +18,15 @@ public class AchievementManager : MonoBehaviour
     public event Action OnDataChanged;
     public event Action<AchievementDTO> OnNewAchievementRewarded;
 
-    AchievementRepository _repository;
+    private AchievementRepository _repository;
+
+    [SerializeField]
+    private AchievementLoader _achievementLoader;
+
+    [SerializeField]
+    private GameObject ui_AchievementContent;
+    [SerializeField]
+    private GameObject ui_AchievementPrefab;
 
 
     private void Awake()
@@ -44,10 +52,11 @@ public class AchievementManager : MonoBehaviour
 
         _repository = new AchievementRepository();
 
+        List<AchievementDTO> achievementDTO = _achievementLoader.GetAchievement(); // csv 파일 로드
         List<AchievementSaveData> saveDatas = _repository.Load();/*_repository.Load();*/
 
         // 도메인끼리 상호작용해야 할 부분은 여기에 넣는다.
-        foreach (var metaData in _metaDatas)
+        foreach (var metaData in achievementDTO)
         {
             Achievement duplicatedAchievement = FindByID(metaData.ID);
             if (duplicatedAchievement != null)
@@ -56,9 +65,12 @@ public class AchievementManager : MonoBehaviour
             }
 
             // 데이터 생성
-            AchievementSaveData saveData = saveDatas?.Find(a=>a.ID == metaData.ID) ?? new AchievementSaveData();
+            AchievementSaveData saveData = new AchievementSaveData(); // saveDatas?.Find(a=>a.ID == metaData.ID) ?? new AchievementSaveData();
             Achievement achievement = new Achievement(metaData, saveData);
             _achievements.Add(achievement);
+
+            GameObject achievementObject = Instantiate(ui_AchievementPrefab);
+            ui_AchievementContent.transform.SetParent(achievementObject.transform);
         }
     }
 
