@@ -27,6 +27,8 @@ public class AchievementManager : MonoBehaviour
     private GameObject ui_AchievementContent;
     [SerializeField]
     private GameObject ui_AchievementPrefab;
+    [SerializeField]
+    private UI_Achievement ui_Achievement;
 
 
     private void Awake()
@@ -65,12 +67,15 @@ public class AchievementManager : MonoBehaviour
             }
 
             // 데이터 생성
-            AchievementSaveData saveData = new AchievementSaveData(); // saveDatas?.Find(a=>a.ID == metaData.ID) ?? new AchievementSaveData();
+            AchievementSaveData saveData = saveDatas?.Find(a => a.ID == metaData.ID) ?? new AchievementSaveData();
             Achievement achievement = new Achievement(metaData, saveData);
             _achievements.Add(achievement);
 
             GameObject achievementObject = Instantiate(ui_AchievementPrefab);
-            ui_AchievementContent.transform.SetParent(achievementObject.transform);
+            achievementObject.transform.SetParent(ui_AchievementContent.transform, false);
+
+            UI_AchievementSlot ui_AchievementSlot  = achievementObject.GetComponent<UI_AchievementSlot>();
+            ui_Achievement.addSlot(ui_AchievementSlot);
         }
     }
 

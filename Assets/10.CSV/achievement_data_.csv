@@ -1,8 +1,8 @@
-﻿ID,Name,Description,EAchievementCondition,GoalValue,RewardType,RewardAmount
-ACH_MONEY_001,첫 수익,100 골드 획득,GoldAmount,100,Gold,300
-ACH_MONEY_002,부자 되기 1단계,총 1000 골드 획득,GaoldAmount,1000,Diamond,1
-ACH_KILL_DRONE_001,드론 헌터,드론 타입 몬스터 10마리 처치,DronKillCount,10,Gold,1000
-ACH_KILL_DRONE_002,드론 학살자,드론 타입 몬스터 50마리 처치,100,Diamond,2,
-ACH_KILL_BOSS_001,보스 저격수,보스 몬스터 1기 격추,BossKillCount,1,Diamond,3
-ACH_TIME_001,진득하게,플레이 누적 시간 10분 달성,PlayTime,600,Diamond,5
-ACH_HIDDEN_001,눈썰미,특정 위치의 숨겨진 장소,777,Diamond,10,
+﻿ID,Name,Description,EAchievementCondition,GoalValue,RewardType,RewardAmount,test
+ACH_MONEY_001,첫 수익,100 골드 획득,GoldAmount,100,Gold,300,1
+ACH_MONEY_002,부자 되기 1단계,총 1000 골드 획득,GaoldAmount,1000,Diamond,1,1
+ACH_KILL_DRONE_001,드론 헌터,드론 타입 몬스터 10마리 처치,DronKillCount,10,Gold,1000,1
+ACH_KILL_DRONE_002,드론 학살자,드론 타입 몬스터 50마리 처치,100,100,Diamond,5,1
+ACH_KILL_BOSS_001,보스 저격수,보스 몬스터 1기 격추,BossKillCount,1,Diamond,3,1
+ACH_TIME_001,진득하게,플레이 누적 시간 10분 달성,PlayTime,600,Diamond,5,1
+ACH_HIDDEN_001,눈썰미,특정 위치의 숨겨진 장소,777,100,Diamond,5,1

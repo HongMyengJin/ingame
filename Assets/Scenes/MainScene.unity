@@ -1114,6 +1114,7 @@ MonoBehaviour:
   ui_AchievementContent: {fileID: 1664963373}
   ui_AchievementPrefab: {fileID: 3701852360231611740, guid: 03829e1af41b17a4f82de34069204f68,
     type: 3}
+  ui_Achievement: {fileID: 1624463977}
 --- !u!114 &927331410
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,6 +3,8 @@ using TMPro;
 using UnityEngine.UI;
 using NUnit.Framework;
 using System.Collections.Generic;
+using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.SocialPlatforms;
 
 public class UI_Achievement : MonoBehaviour
 {
@@ -23,5 +25,11 @@ public class UI_Achievement : MonoBehaviour
         {
             _slots[i].Refresh(achievements[i]);
         }
+    }
+
+    public void addSlot(UI_AchievementSlot achievementSlot)
+    {
+        _slots.Add(achievementSlot);
+        Refresh();
     }
 }
